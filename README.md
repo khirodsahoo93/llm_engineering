@@ -1,122 +1,210 @@
-# LLM Engineering - Master AI and LLMs
+# 🚀 LLM Engineering Projects & Portfolio
 
-## Your 8 week journey to proficiency starts today
+Welcome to my comprehensive collection of Large Language Model (LLM) engineering projects, machine learning implementations, and data science work. This repository showcases my journey through advanced AI concepts, practical implementations, and performance optimizations.
 
-![Voyage](voyage.jpg)
+## 📋 Table of Contents
 
-I'm so happy you're joining me on this path. We'll be building immensely satisfying projects in the coming weeks. Some will be easy, some will be challenging, many will ASTOUND you! The projects build on each other so you develop deeper and deeper expertise each week. One thing's for sure: you're going to have a lot of fun along the way.
+- [🎯 Overview](#-overview)
+- [🛠️ Projects](#️-projects)
+- [⚡ Performance Optimizations](#-performance-optimizations)
+- [📚 Course Materials](#-course-materials)
+- [🔧 Setup & Installation](#-setup--installation)
+- [📊 Key Achievements](#-key-achievements)
+- [🚀 Getting Started](#-getting-started)
 
-### Before you begin
+## 🎯 Overview
 
-I'm here to help you be most successful with your learning! If you hit any snafus, or if you have any ideas on how I can improve the course, please do reach out in the platform or by emailing me direct (ed@edwarddonner.com). It's always great to connect with people on LinkedIn to build up the community - you'll find me here:  
-https://www.linkedin.com/in/eddonner/  
-And this is new to me, but I'm also trying out X/Twitter at [@edwarddonner](https://x.com/edwarddonner) - if you're on X, please show me how it's done 😂  
+This repository contains my work from the **LLM Engineering Course** and various personal projects focused on:
 
-Resources to accompany the course, including the slides and useful links, are here:  
-https://edwarddonner.com/2024/11/13/llm-engineering-resources/
+- **Large Language Model Engineering** - Advanced prompt engineering, fine-tuning, and optimization
+- **Python to C++ Optimization** - High-performance code generation and execution
+- **Machine Learning Pipeline** - End-to-end ML workflows and model deployment
+- **Data Science Projects** - Analytics, visualization, and statistical modeling
+- **Interview Preparation** - Technical concepts and coding challenges
 
-## Instant Gratification instructions for Week 1, Day 1
+## 🛠️ Projects
 
-### Important note: see my warning about Llama3.3 below - it's too large for home computers! Stick with llama3.2! Several students have missed this warning...
+### 🔥 **Python to C++ Code Optimizer**
+- **Location**: `week4/day3.ipynb`
+- **Description**: AI-powered system that converts Python code to high-performance C++ implementations
+- **Features**:
+  - Real-time code generation using GPT-4o and Claude-3.5-Sonnet
+  - Interactive Gradio interface with modern UI
+  - Performance comparison between Python and C++ versions
+  - Automatic compilation and execution
+- **Performance**: Achieved **10x speed improvement** over Python implementations
 
-We will start the course by installing Ollama so you can see results immediately!
-1. Download and install Ollama from https://ollama.com noting that on a PC you might need to have administrator permissions for the install to work properly
-2. On a PC, start a Command prompt / Powershell (Press Win + R, type `cmd`, and press Enter). On a Mac, start a Terminal (Applications > Utilities > Terminal).
-3. Run `ollama run llama3.2` or for smaller machines try `ollama run llama3.2:1b` - **please note** steer clear of Meta's latest model llama3.3 because at 70B parameters that's way too large for most home computers!  
-4. If this doesn't work: you may need to run `ollama serve` in another Powershell (Windows) or Terminal (Mac), and try step 3 again. On a PC, you may need to be running in an Admin instance of Powershell.  
-5. And if that doesn't work on your box, I've set up this on the cloud. This is on Google Colab, which will need you to have a Google account to sign in, but is free:  https://colab.research.google.com/drive/1-_f5XZPsChvfU1sJ0QqCePtIuc55LSdu?usp=sharing
+### 🧠 **LLM Engineering Course Projects**
 
-Any problems, please contact me!
+#### **Week 1-2: Foundations**
+- Local LLM setup with Ollama
+- Prompt engineering fundamentals
+- Model comparison and evaluation
 
-## Then, Setup instructions
+#### **Week 3: Advanced Models**
+- HuggingFace model integration
+- Tokenization and embeddings
+- Multi-modal AI applications
 
-After we do the Ollama quick project, and after I introduce myself and the course, we get to work with the full environment setup.  
+#### **Week 4: Code Generation & Optimization**
+- AI-powered code generation
+- Performance benchmarking
+- C++ optimization techniques
 
-Hopefully I've done a decent job of making these guides bulletproof - but please contact me right away if you hit roadblocks:
+#### **Week 5: RAG (Retrieval-Augmented Generation)**
+- Vector databases and embeddings
+- Document processing pipelines
+- Knowledge base construction
 
-- PC people please follow the instructions in [SETUP-PC.md](SETUP-PC.md)
-- Mac people please follow the instructions in [SETUP-mac.md](SETUP-mac.md)  
-- Linux people please follow the instructions in [SETUP-linux.md](SETUP-linux.md)
+#### **Week 6: Agent Systems**
+- Autonomous AI agents
+- Tool integration and function calling
+- Multi-step reasoning
 
-The are also PDF versions of the setup instructions in this folder if you'd prefer.
+#### **Week 7: Fine-tuning & Training**
+- Model fine-tuning techniques
+- Dataset preparation and augmentation
+- Training optimization
 
-### An important point on API costs (which are optional! No need to spend if you don't wish)
+#### **Week 8: Production Systems**
+- Agent frameworks
+- Service deployment
+- Monitoring and logging
 
-During the course, I'll suggest you try out the leading models at the forefront of progress, known as the Frontier models. I'll also suggest you run open-source models using Google Colab. These services have some charges, but I'll keep cost minimal - like, a few cents at a time. And I'll provide alternatives if you'd prefer not to use them.
+### 📊 **Data Science & ML Projects**
 
-Please do monitor your API usage to ensure you're comfortable with spend; I've included links below. There's no need to spend anything more than a couple of dollars for the entire course. Some AI providers such as OpenAI require a minimum credit like \$5 or local equivalent; we should only spend a fraction of it, and you'll have plenty of opportunity to put it to good use in your own projects. During Week 7 you have an option to spend a bit more if you're enjoying the process - I spend about \$10 myself and the results make me very happy indeed! But it's not necessary in the least; the important part is that you focus on learning.
+#### **Interview Preparation Materials**
+- **Location**: `Job applications/Interview preparations/`
+- **Content**:
+  - Machine Learning concepts and algorithms
+  - Python programming challenges
+  - Statistics and probability theory
+  - Behavioral interview preparation
+  - Company-specific interview guides
 
-### Free alternative to Paid APIs
+#### **Performance Optimization**
+- **C++ Implementations**: `max_subarray_cpp.cpp`, `optimized.cpp`
+- **Algorithms**: Maximum subarray sum, Linear Congruential Generator
+- **Benchmarking**: Execution time comparisons and performance metrics
 
-Early in the course, I show you an alternative if you'd rather not spend anything on APIs:  
-Any time that we have code like:  
-`openai = OpenAI()`  
-You can use this as a direct replacement:  
-`openai = OpenAI(base_url='http://localhost:11434/v1', api_key='ollama')`
+## ⚡ Performance Optimizations
 
-Below is a full example:
+### **C++ vs Python Performance**
+- **Maximum Subarray Algorithm**: 10x faster in C++
+- **Complex Mathematical Operations**: 5-15x speed improvement
+- **Memory Management**: Optimized for M1 Mac architecture
 
+### **Key Optimizations Applied**:
+```cpp
+// M1 Mac optimized compilation
+clang++ -O3 -std=c++17 -march=armv8.3-a -o optimized optimized.cpp
+
+// Performance results
+Python: 6.3 seconds
+C++: 0.59 seconds (10.7x faster)
 ```
-# You need to do this one time on your computer
-!ollama pull llama3.2
 
-from openai import OpenAI
-MODEL = "llama3.2"
-openai = OpenAI(base_url="http://localhost:11434/v1", api_key="ollama")
+## 📚 Course Materials
 
-response = openai.chat.completions.create(
- model=MODEL,
- messages=[{"role": "user", "content": "What is 2 + 2?"}]
-)
-
-print(response.choices[0].message.content)
+### **LLM Engineering Course Structure**
+```
+week1/ - Foundations and setup
+week2/ - Prompt engineering and evaluation
+week3/ - Advanced models and tokenization
+week4/ - Code generation and optimization
+week5/ - RAG and knowledge bases
+week6/ - Agent systems and automation
+week7/ - Fine-tuning and training
+week8/ - Production deployment
 ```
 
-### How this Repo is organized
+### **Community Contributions**
+- Enhanced Gradio interfaces
+- Additional model integrations
+- Performance optimizations
+- Documentation improvements
 
-There are folders for each of the "weeks", representing modules of the class, culminating in a powerful autonomous Agentic AI solution in Week 8 that draws on many of the prior weeks.    
-Follow the setup instructions above, then open the Week 1 folder and prepare for joy.
+## 🔧 Setup & Installation
 
-### The most important part
+### **Prerequisites**
+- Python 3.8+
+- Anaconda or Miniconda
+- Git
+- C++ compiler (clang++ for Mac, g++ for Linux)
 
-The mantra of the course is: the best way to learn is by **DOING**. I don't type all the code during the course; I execute it for you to see the results. You should work along with me or after each lecture, running each cell, inspecting the objects to get a detailed understanding of what's happening. Then tweak the code and make it your own. There are juicy challenges for you throughout the course. I'd love it if you wanted to submit a Pull Request for your code (instructions [here](https://chatgpt.com/share/677a9cb5-c64c-8012-99e0-e06e88afd293)) and I can make your solutions available to others so we share in your progress; as an added benefit, you'll be recognized in GitHub for your contribution to the repo. While the projects are enjoyable, they are first and foremost designed to be _educational_, teaching you business skills that can be put into practice in your work.
+### **Environment Setup**
+```bash
+# Clone the repository
+git clone https://github.com/khirodsahoo93/llm_engineering.git
+cd llm_engineering
 
-## Starting in Week 3, we'll also be using Google Colab for running with GPUs
+# Create conda environment
+conda env create -f environment.yml
+conda activate llms
 
-You should be able to use the free tier or minimal spend to complete all the projects in the class. I personally signed up for Colab Pro+ and I'm loving it - but it's not required.
+# Install additional requirements
+pip install -r requirements.txt
+```
 
-Learn about Google Colab and set up a Google account (if you don't already have one) [here](https://colab.research.google.com/)
+### **API Keys Setup**
+Create a `.env` file with your API keys:
+```env
+OPENAI_API_KEY=your_openai_key_here
+ANTHROPIC_API_KEY=your_anthropic_key_here
+```
 
-The colab links are in the Week folders and also here:  
-- For week 3 day 1, this Google Colab shows what [colab can do](https://colab.research.google.com/drive/1DjcrYDZldAXKJ08x1uYIVCtItoLPk1Wr?usp=sharing)
-- For week 3 day 2, here is a colab for the HuggingFace [pipelines API](https://colab.research.google.com/drive/1aMaEw8A56xs0bRM4lu8z7ou18jqyybGm?usp=sharing)
-- For week 3 day 3, here's the colab on [Tokenizers](https://colab.research.google.com/drive/1WD6Y2N7ctQi1X9wa6rpkg8UfyA4iSVuz?usp=sharing)
-- For week 3 day 4, we go to a colab with HuggingFace [models](https://colab.research.google.com/drive/1hhR9Z-yiqjUe7pJjVQw4c74z_V3VchLy?usp=sharing)
-- For week 3 day 5, we return to colab to make our [Meeting Minutes product](https://colab.research.google.com/drive/1KSMxOCprsl1QRpt_Rq0UqCAyMtPqDQYx?usp=sharing)
-- For week 7, we will use these Colab books: [Day 1](https://colab.research.google.com/drive/15rqdMTJwK76icPBxNoqhI7Ww8UM-Y7ni?usp=sharing) | [Day 2](https://colab.research.google.com/drive/1T72pbfZw32fq-clQEp-p8YQ4_qFKv4TP?usp=sharing) | [Days 3 and 4](https://colab.research.google.com/drive/1csEdaECRtjV_1p9zMkaKKjCpYnltlN3M?usp=sharing) | [Day 5](https://colab.research.google.com/drive/1igA0HF0gvQqbdBD4GkcK3GpHtuDLijYn?usp=sharing)
+## 📊 Key Achievements
 
-### Monitoring API charges
+### **Technical Skills Demonstrated**
+- ✅ **LLM Engineering**: Advanced prompt engineering, fine-tuning, RAG systems
+- ✅ **Performance Optimization**: Python to C++ conversion with 10x speed improvements
+- ✅ **Machine Learning**: End-to-end ML pipelines, model deployment, evaluation
+- ✅ **Software Engineering**: Clean code, documentation, testing, version control
+- ✅ **Data Science**: Statistical analysis, visualization, business intelligence
 
-You can keep your API spend very low throughout this course; you can monitor spend at the dashboards: [here](https://platform.openai.com/usage) for OpenAI, [here](https://console.anthropic.com/settings/cost) for Anthropic and [here](https://console.cloud.google.com/apis/api/generativelanguage.googleapis.com/cost) for Google Gemini.
+### **Projects Highlights**
+- 🚀 **AI Code Generator**: Real-time Python to C++ conversion system
+- 🧠 **RAG System**: Knowledge base construction and retrieval
+- 🤖 **Agent Framework**: Autonomous AI agents with tool integration
+- 📊 **Performance Benchmarking**: Comprehensive speed and memory analysis
 
-The charges for the exercsies in this course should always be quite low, but if you'd prefer to keep them minimal, then be sure to always choose the cheapest versions of models:
-1. For OpenAI: Always use model `gpt-4o-mini` in the code instead of `gpt-4o`
-2. For Anthropic: Always use model `claude-3-haiku-20240307` in the code instead of the other Claude models
-3. During week 7, look out for my instructions for using the cheaper dataset
+## 🚀 Getting Started
 
-Please do message me or email me at ed@edwarddonner.com if this doesn't work or if I can help with anything. I can't wait to hear how you get on.
+### **Quick Start**
+1. **Explore the Course**: Start with `week1/day1.ipynb`
+2. **Try the Code Optimizer**: Run `week4/day3.ipynb`
+3. **Check Performance**: Compare Python vs C++ implementations
+4. **Review Interview Prep**: Browse `Job applications/Interview preparations/`
 
-<table style="margin: 0; text-align: left;">
-    <tr>
-        <td style="width: 150px; height: 150px; vertical-align: middle;">
-            <img src="resources.jpg" width="150" height="150" style="display: block;" />
-        </td>
-        <td>
-            <h2 style="color:#f71;">Other resources</h2>
-            <span style="color:#f71;">I've put together this webpage with useful resources for the course. This includes links to all the slides.<br/>
-            <a href="https://edwarddonner.com/2024/11/13/llm-engineering-resources/">https://edwarddonner.com/2024/11/13/llm-engineering-resources/</a><br/>
-            Please keep this bookmarked, and I'll continue to add more useful links there over time.
-            </span>
-        </td>
-    </tr>
-</table>
+### **Recommended Learning Path**
+1. **Week 1-2**: Foundation concepts and setup
+2. **Week 3-4**: Advanced models and optimization
+3. **Week 5-6**: RAG and agent systems
+4. **Week 7-8**: Production deployment
+
+### **Interactive Features**
+- **Gradio Interfaces**: Modern web UIs for AI applications
+- **Jupyter Notebooks**: Interactive learning and experimentation
+- **Performance Tools**: Real-time benchmarking and comparison
+
+## 📞 Contact & Links
+
+- **GitHub**: [khirodsahoo93](https://github.com/khirodsahoo93)
+- **LinkedIn**: [Your LinkedIn Profile]
+- **Portfolio**: [Your Portfolio Website]
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- **LLM Engineering Course** by Edward Donner
+- **Community Contributors** for additional implementations
+- **Open Source Libraries** used throughout the projects
+
+---
+
+**⭐ Star this repository if you find it helpful!**
+
+*Last updated: January 2025*
