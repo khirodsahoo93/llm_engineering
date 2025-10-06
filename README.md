@@ -1,6 +1,8 @@
-# 🚀 LLM Engineering Projects & Portfolio
+# 🚀 LLM Engineering Projects & Learning Portfolio
 
-Welcome to my comprehensive collection of Large Language Model (LLM) engineering projects, machine learning implementations, and data science work. This repository showcases my journey through advanced AI concepts, practical implementations, and performance optimizations.
+Welcome to my learning journey through the **LLM Engineering Course** by [Edward Donner](https://www.linkedin.com/in/eddonner/). This repository contains my implementations, experiments, and enhancements based on the course materials, showcasing my progression through advanced AI concepts and practical implementations.
+
+> **Course Credit**: This work is based on the excellent [LLM Engineering Course](https://edwarddonner.com/2024/11/13/llm-engineering-resources/) by Edward Donner. All original course materials and concepts belong to the course creator.
 
 ## 📋 Table of Contents
 
@@ -14,62 +16,62 @@ Welcome to my comprehensive collection of Large Language Model (LLM) engineering
 
 ## 🎯 Overview
 
-This repository contains my work from the **LLM Engineering Course** and various personal projects focused on:
+This repository contains my **learning implementations** from the **LLM Engineering Course** by Edward Donner, along with my personal enhancements and experiments. The focus areas include:
 
-- **Large Language Model Engineering** - Advanced prompt engineering, fine-tuning, and optimization
-- **Python to C++ Optimization** - High-performance code generation and execution
-- **Machine Learning Pipeline** - End-to-end ML workflows and model deployment
-- **Data Science Projects** - Analytics, visualization, and statistical modeling
-- **Interview Preparation** - Technical concepts and coding challenges
+- **Large Language Model Engineering** - Learning advanced prompt engineering, fine-tuning, and optimization techniques
+- **Python to C++ Optimization** - Implementing high-performance code generation and execution (my enhancement)
+- **Machine Learning Pipeline** - Following course materials for end-to-end ML workflows
+- **Data Science Projects** - Applying course concepts to analytics and modeling
+- **Interview Preparation** - Additional personal study materials and practice
 
 ## 🛠️ Projects
 
-### 🔥 **Python to C++ Code Optimizer**
+### 🔥 **Python to C++ Code Optimizer** *(My Enhancement)*
 - **Location**: `week4/day3.ipynb`
-- **Description**: AI-powered system that converts Python code to high-performance C++ implementations
-- **Features**:
-  - Real-time code generation using GPT-4o and Claude-3.5-Sonnet
-  - Interactive Gradio interface with modern UI
-  - Performance comparison between Python and C++ versions
-  - Automatic compilation and execution
-- **Performance**: Achieved **10x speed improvement** over Python implementations
+- **Description**: Enhanced version of the course's AI-powered system that converts Python code to high-performance C++ implementations
+- **My Improvements**:
+  - Enhanced Gradio interface with modern UI design
+  - Dynamic port selection to avoid conflicts
+  - Better error handling and user feedback
+  - Improved model selection and compatibility
+- **Performance**: Achieved **10x speed improvement** over Python implementations (as demonstrated in course)
 
-### 🧠 **LLM Engineering Course Projects**
+### 🧠 **LLM Engineering Course Projects** *(Following Edward Donner's Curriculum)*
 
 #### **Week 1-2: Foundations**
-- Local LLM setup with Ollama
-- Prompt engineering fundamentals
-- Model comparison and evaluation
+- Local LLM setup with Ollama (course material)
+- Prompt engineering fundamentals (course material)
+- Model comparison and evaluation (course material)
 
 #### **Week 3: Advanced Models**
-- HuggingFace model integration
-- Tokenization and embeddings
-- Multi-modal AI applications
+- HuggingFace model integration (course material)
+- Tokenization and embeddings (course material)
+- Multi-modal AI applications (course material)
 
 #### **Week 4: Code Generation & Optimization**
-- AI-powered code generation
-- Performance benchmarking
-- C++ optimization techniques
+- AI-powered code generation (course material)
+- Performance benchmarking (course material)
+- C++ optimization techniques (course material + my enhancements)
 
 #### **Week 5: RAG (Retrieval-Augmented Generation)**
-- Vector databases and embeddings
-- Document processing pipelines
-- Knowledge base construction
+- Vector databases and embeddings (course material)
+- Document processing pipelines (course material)
+- Knowledge base construction (course material)
 
 #### **Week 6: Agent Systems**
-- Autonomous AI agents
-- Tool integration and function calling
-- Multi-step reasoning
+- Autonomous AI agents (course material)
+- Tool integration and function calling (course material)
+- Multi-step reasoning (course material)
 
 #### **Week 7: Fine-tuning & Training**
-- Model fine-tuning techniques
-- Dataset preparation and augmentation
-- Training optimization
+- Model fine-tuning techniques (course material)
+- Dataset preparation and augmentation (course material)
+- Training optimization (course material)
 
 #### **Week 8: Production Systems**
-- Agent frameworks
-- Service deployment
-- Monitoring and logging
+- Agent frameworks (course material)
+- Service deployment (course material)
+- Monitoring and logging (course material)
 
 ### 📊 **Data Science & ML Projects**
 
@@ -153,20 +155,20 @@ OPENAI_API_KEY=your_openai_key_here
 ANTHROPIC_API_KEY=your_anthropic_key_here
 ```
 
-## 📊 Key Achievements
+## 📊 Learning Achievements
 
-### **Technical Skills Demonstrated**
-- ✅ **LLM Engineering**: Advanced prompt engineering, fine-tuning, RAG systems
-- ✅ **Performance Optimization**: Python to C++ conversion with 10x speed improvements
-- ✅ **Machine Learning**: End-to-end ML pipelines, model deployment, evaluation
-- ✅ **Software Engineering**: Clean code, documentation, testing, version control
-- ✅ **Data Science**: Statistical analysis, visualization, business intelligence
+### **Skills Developed Through Course**
+- ✅ **LLM Engineering**: Learned advanced prompt engineering, fine-tuning, RAG systems
+- ✅ **Performance Optimization**: Implemented Python to C++ conversion with 10x speed improvements
+- ✅ **Machine Learning**: Applied end-to-end ML pipelines, model deployment, evaluation
+- ✅ **Software Engineering**: Practiced clean code, documentation, testing, version control
+- ✅ **Data Science**: Applied statistical analysis, visualization, business intelligence
 
-### **Projects Highlights**
-- 🚀 **AI Code Generator**: Real-time Python to C++ conversion system
-- 🧠 **RAG System**: Knowledge base construction and retrieval
-- 🤖 **Agent Framework**: Autonomous AI agents with tool integration
-- 📊 **Performance Benchmarking**: Comprehensive speed and memory analysis
+### **My Enhancements & Contributions**
+- 🚀 **Enhanced AI Code Generator**: Improved Gradio interface and error handling
+- 🧠 **RAG System Implementation**: Successfully implemented knowledge base construction
+- 🤖 **Agent Framework**: Completed autonomous AI agents with tool integration
+- 📊 **Performance Benchmarking**: Demonstrated comprehensive speed and memory analysis
 
 ## 🚀 Getting Started
 
@@ -199,9 +201,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- **LLM Engineering Course** by Edward Donner
-- **Community Contributors** for additional implementations
+- **Primary Credit**: [Edward Donner](https://www.linkedin.com/in/eddonner/) for creating the excellent [LLM Engineering Course](https://edwarddonner.com/2024/11/13/llm-engineering-resources/)
+- **Course Resources**: All original course materials, concepts, and curriculum belong to Edward Donner
+- **Community Contributors** for additional implementations and enhancements
 - **Open Source Libraries** used throughout the projects
+- **My Role**: Student implementing and enhancing the course materials for learning purposes
 
 ---
 
