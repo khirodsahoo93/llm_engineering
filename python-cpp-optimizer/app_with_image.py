@@ -380,7 +380,7 @@ modern_css = """
 
 /* Login styling */
 body, .gradio-container {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    background: url('assets/3656064.jpg') center/cover no-repeat fixed !important;
 }
 
 .login-wrapper {
@@ -389,7 +389,7 @@ body, .gradio-container {
     justify-content: center;
     min-height: 100vh;
     padding: 24px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('assets/3656064.jpg') center/cover no-repeat fixed;
 }
 
 .login-card {
@@ -481,9 +481,9 @@ body, .gradio-container {
 def create_interface():
     with gr.Blocks(css=modern_css, title="Python to C++ Code Optimizer", theme=gr.themes.Soft()) as app:
         authorized = gr.State(False)
-        BANNER_URL = os.getenv("BANNER_URL", "")
-        BACKGROUND_URL = os.getenv("BACKGROUND_URL", "")
-        # Intentionally not rendering a banner image to avoid empty placeholders
+        # Background image is handled via CSS: assets/3656064.jpg
+        # For Hugging Face Space: use /file=assets/3656064.jpg in CSS
+        # For local: use assets/3656064.jpg in CSS
 
         def check_password(pw):
             ok = pw == APP_PASSWORD
@@ -512,7 +512,7 @@ def create_interface():
             login_btn = gr.Button("Continue", elem_classes=["modern-button"], size="lg")
             login_error = gr.Markdown(visible=False, elem_classes=["login-error"])
             gr.HTML("""
-                    <div class="freepik-credit">Background design inspired by <a href="https://www.freepik.com" target="_blank">Freepik</a></div>
+                    <div class="freepik-credit">Background image by <a href="https://www.freepik.com" target="_blank">Freepik</a></div>
                 </div>
             </div>
             """)

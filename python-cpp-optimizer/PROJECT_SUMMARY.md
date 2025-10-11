@@ -51,13 +51,14 @@ A clean, professional **Python to C++ Code Optimizer** web application without t
   - Performance comparison
 - **UI Features**:
   - Modern ChatGPT-style interface
-  - Password protection
   - Real-time streaming
   - Syntax highlighting
-- **Security**:
+  - Custom theming (light background enforced)
+- **Access Control & Security**:
+  - In‑app password gate (no external basic‑auth)
   - Environment variable handling
-  - Password authentication
   - Code execution warnings
+  - Optional background and banner images via env vars
 
 ---
 
