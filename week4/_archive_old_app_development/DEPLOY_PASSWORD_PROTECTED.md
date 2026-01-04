@@ -30,7 +30,7 @@ In your new Space, click **"Files and versions"** → **"Add file"** → **"Uplo
 
 Upload these 3 files from:
 ```
-/Users/khirod/Documents/Udemy/Generative AI/Projects/llm_engineering/week4/
+/path/to/your/llm_engineering/week4/
 ```
 
 **Files to upload:**
@@ -351,7 +351,7 @@ Share responsibly and enjoy! 🚀
 
 ```bash
 # View your files
-cd /Users/khirod/Documents/Udemy/Generative\ AI/Projects/llm_engineering/week4
+cd /path/to/your/llm_engineering/week4
 ls -la
 
 # Check app.py is password-protected

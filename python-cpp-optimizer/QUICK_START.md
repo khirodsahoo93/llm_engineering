@@ -4,7 +4,7 @@
 
 ### 📁 Project Location
 ```
-/Users/khirod/Documents/Udemy/Generative AI/Projects/llm_engineering/python-cpp-optimizer/
+/path/to/your/llm_engineering/python-cpp-optimizer/
 ```
 
 ### 📋 What's Included
@@ -29,9 +29,6 @@ Your app is already running! Just:
 1. **Open your browser**
    - Go to the URL shown in terminal (usually `http://127.0.0.1:7860`)
 
-2. **Login**
-   - Username: `user`
-   - Password: `HuggingFKhirod@026` (from your .env)
 
 3. **Test it!**
    - Try GPT-4o model
