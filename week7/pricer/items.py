@@ -44,13 +44,52 @@ class Item(BaseModel):
 
     @classmethod
     def from_hub(cls, dataset_name: str) -> tuple[list[Self], list[Self], list[Self]]:
-        """Load from HuggingFace Hub and reconstruct Items"""
+        """Load from HuggingFace Hub and reconstruct Items.
+        Handles both full Item datasets and prompt-only datasets."""
         ds = load_dataset(dataset_name)
-        return (
-            [cls.model_validate(row) for row in ds["train"]],
-            [cls.model_validate(row) for row in ds["validation"]],
-            [cls.model_validate(row) for row in ds["test"]],
-        )
+        
+        # Check if this is a prompt-only dataset (only has prompt and completion)
+        sample_row = ds["train"][0] if len(ds["train"]) > 0 else None
+        is_prompt_only = sample_row and set(sample_row.keys()) == {"prompt", "completion"}
+        
+        # Handle validation split key (push_prompts_to_hub uses "val", push_to_hub uses "validation")
+        val_key = "val" if "val" in ds else "validation"
+        
+        if is_prompt_only:
+            # Create minimal Item objects from prompt/completion pairs
+            def create_item_from_prompt(row):
+                # Extract price from completion (e.g., "64.00" -> 64.0, "64" -> 64.0)
+                completion = row["completion"]
+                try:
+                    # Try to parse as float directly
+                    price = float(completion)
+                except (ValueError, AttributeError):
+                    # If that fails, try removing ".00" suffix
+                    try:
+                        price = float(completion.replace(".00", ""))
+                    except (ValueError, AttributeError):
+                        price = 0.0
+                
+                return cls(
+                    title="Unknown",  # Placeholder - not available in prompt-only format
+                    category="Unknown",  # Placeholder - not available in prompt-only format
+                    price=price,
+                    prompt=row["prompt"],
+                    completion=row["completion"]
+                )
+            
+            return (
+                [create_item_from_prompt(row) for row in ds["train"]],
+                [create_item_from_prompt(row) for row in ds[val_key]] if val_key in ds else [],
+                [create_item_from_prompt(row) for row in ds["test"]],
+            )
+        else:
+            # Full Item dataset
+            return (
+                [cls.model_validate(row) for row in ds["train"]],
+                [cls.model_validate(row) for row in ds[val_key]] if val_key in ds else [cls.model_validate(row) for row in ds["validation"]],
+                [cls.model_validate(row) for row in ds["test"]],
+            )
 
     def count_tokens(self, tokenizer):
         """Count tokens in the summary"""

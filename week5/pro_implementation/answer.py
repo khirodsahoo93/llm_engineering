@@ -2,6 +2,7 @@ from openai import OpenAI
 from dotenv import load_dotenv
 from chromadb import PersistentClient
 from litellm import completion
+import litellm
 from pydantic import BaseModel, Field
 from pathlib import Path
 from tenacity import retry, wait_exponential
@@ -9,8 +10,11 @@ from tenacity import retry, wait_exponential
 
 load_dotenv(override=True)
 
-# MODEL = "openai/gpt-4.1-nano"
-MODEL = "groq/openai/gpt-oss-120b"
+# Enable LiteLLM debug logging to see detailed error messages
+litellm.set_verbose = True
+
+MODEL = "openai/gpt-4.1-nano"
+# MODEL = "groq/openai/gpt-oss-120b"
 DB_NAME = str(Path(__file__).parent.parent / "preprocessed_db")
 KNOWLEDGE_BASE_PATH = Path(__file__).parent.parent / "knowledge-base"
 SUMMARIES_PATH = Path(__file__).parent.parent / "summaries"
