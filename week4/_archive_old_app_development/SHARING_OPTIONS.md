@@ -73,7 +73,7 @@
 
 1. **Use the password-protected app:**
    ```bash
-   cd /Users/khirod/Documents/Udemy/Generative\ AI/Projects/llm_engineering/week4
+   cd /path/to/your/llm_engineering/week4
    # The file app_with_password.py is already created!
    ```
 
@@ -266,7 +266,7 @@ See usage patterns
 
 ### Switch to Password Protected Version:
 ```bash
-cd /Users/khirod/Documents/Udemy/Generative\ AI/Projects/llm_engineering/week4
+cd /path/to/your/llm_engineering/week4
 cp app.py app_original.py  # Backup
 cp app_with_password.py app.py  # Use password version
 ```

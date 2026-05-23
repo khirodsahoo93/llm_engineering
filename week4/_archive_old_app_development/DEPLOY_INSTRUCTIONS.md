@@ -31,7 +31,7 @@ Your app will build automatically in ~2 minutes.
 #### Step 1: Get Your Files Ready
 Your files are located at:
 ```
-/Users/khirod/Documents/Udemy/Generative AI/Projects/llm_engineering/week4/
+/path/to/your/llm_engineering/week4/
 ```
 
 Files to upload:
@@ -123,9 +123,9 @@ cd YOUR-SPACE-NAME
 #### Step 3: Copy Your Files
 ```bash
 # Copy files from your project
-cp /Users/khirod/Documents/Udemy/Generative\ AI/Projects/llm_engineering/week4/app.py .
-cp /Users/khirod/Documents/Udemy/Generative\ AI/Projects/llm_engineering/week4/requirements.txt .
-cp /Users/khirod/Documents/Udemy/Generative\ AI/Projects/llm_engineering/week4/README.md .
+cp /path/to/your/llm_engineering/week4/app.py .
+cp /path/to/your/llm_engineering/week4/requirements.txt .
+cp /path/to/your/llm_engineering/week4/README.md .
 ```
 
 #### Step 4: Commit and Push

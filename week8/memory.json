@@ -16,5 +16,14 @@
     },
     "estimate": 930.8824204895075,
     "discount": 225.88242048950747
+  },
+  {
+    "deal": {
+      "product_description": "Dyson 360 Vis Nav is a compact robot vacuum with navigation sensors and suction optimized for home cleaning. It maps rooms to plan efficient cleaning paths and handles common debris on hard floors and carpets. The unit is designed for autonomous cleaning cycles and returns to its dock when finished or to recharge, offering hands-off maintenance for regular household use.",
+      "price": 279.99,
+      "url": "https://www.dealnews.com/products/Dyson/Dyson-360-Vis-Nav-Robot-Vacuum/493145.html?iref=rss-f1912"
+    },
+    "estimate": 678.3213500976562,
+    "discount": 398.33135009765624
   }
 ]
