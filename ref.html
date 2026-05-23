@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>LLM Engineering Course Reference</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">LLM Engineering Course Reference</h1>
+</header>
+<h1 id="llm-engineering-course-interview-reference-guide">LLM
+Engineering Course — Interview &amp; Reference Guide</h1>
+<p>A single reference for everything covered in this course: libraries,
+tools, models, architecture, techniques, and how to answer interview
+questions.</p>
+<hr />
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol type="1">
+<li><a href="#1-course-overview--objectives">Course Overview &amp;
+Objectives</a></li>
+<li><a href="#2-project-structure-weeks-18">Project Structure (Weeks
+1–8)</a></li>
+<li><a href="#3-key-libraries--tools">Key Libraries &amp; Tools</a></li>
+<li><a href="#4-models-used">Models Used</a></li>
+<li><a href="#5-core-techniques">Core Techniques</a></li>
+<li><a href="#6-architecture-the-price-is-right-capstone">Architecture:
+“The Price Is Right” Capstone</a></li>
+<li><a href="#7-rag-retrieval-augmented-generation">RAG
+(Retrieval-Augmented Generation)</a></li>
+<li><a href="#8-fine-tuning-frontier-vs-open-source">Fine-Tuning
+(Frontier vs Open-Source)</a></li>
+<li><a href="#9-deployment-modal">Deployment: Modal</a></li>
+<li><a href="#10-multi-agent-system">Multi-Agent System</a></li>
+<li><a href="#11-pros-cons--trade-offs">Pros, Cons &amp;
+Trade-offs</a></li>
+<li><a href="#12-interview-qa">Interview Q&amp;A</a></li>
+<li><a href="#13-quick-reference-cheat-sheet">Quick Reference Cheat
+Sheet</a></li>
+</ol>
+<hr />
+<h2 id="course-overview-objectives">1. Course Overview &amp;
+Objectives</h2>
+<ul>
+<li><strong>Goal:</strong> Build an end-to-end <strong>agentic</strong>
+system that uses multiple LLMs and agents to solve a real problem.</li>
+<li><strong>Capstone:</strong> “The Price Is Right” — find deals from
+RSS feeds, estimate product prices with multiple models (fine-tuned,
+frontier, neural network), and surface opportunities where estimated
+price &gt;&gt; deal price.</li>
+<li><strong>Skills covered:</strong> Frontier APIs, RAG, embeddings,
+chunking, retrieval evaluation, fine-tuning (OpenAI + open-source
+QLoRA), deployment on Modal, and multi-agent orchestration.</li>
+</ul>
+<hr />
+<h2 id="project-structure-weeks-18">2. Project Structure (Weeks
+1–8)</h2>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 24%" />
+<col style="width: 57%" />
+</colgroup>
+<thead>
+<tr>
+<th>Week</th>
+<th>Focus</th>
+<th>Key Deliverables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>First frontier LLM project</td>
+<td>Web summarizer, intro to APIs</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Frontier Model APIs</td>
+<td>OpenAI, Anthropic, Google (Gemini), DeepSeek; streaming; multi-model
+chat</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Colab, Hugging Face, synthetic data</td>
+<td>Pipelines, data generation</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Code generator</td>
+<td>Python → C++ with frontier models; Gradio; docstrings</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td><strong>RAG</strong></td>
+<td>Ingest (loaders, splitters, Chroma, BM25), answer (hybrid search,
+reranking, query rewrite), evaluation (MRR, nDCG, LLM-as-judge)</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td><strong>“The Price Is Right”</strong> (part 1)</td>
+<td>Data curation → preprocessor (LiteLLM) → evaluator → DNN +
+<strong>OpenAI fine-tuning</strong> (GPT-4.1-nano)</td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td><strong>Open-source fine-tuning</strong></td>
+<td>QLoRA/PEFT on LLaMA 3.2-3B; prompt data; train &amp; eval</td>
+</tr>
+<tr>
+<td><strong>8</strong></td>
+<td><strong>Agentic AI &amp; deployment</strong></td>
+<td>Modal (hello, Llama, pricer); SpecialistAgent, FrontierAgent,
+EnsembleAgent, ScannerAgent, MessagingAgent, PlanningAgent;
+DealAgentFramework; Gradio UI</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Important folders:</strong> -
+<code>week5/implementation/</code> — LangChain RAG (ingest, answer),
+Chroma, BM25 - <code>week5/pro_implementation/</code> — RAG with
+reranking, query rewrite, LiteLLM - <code>week5/evaluation/</code> —
+retrieval + answer evals - <code>week6/pricer/</code> — Parser,
+Preprocessor (LiteLLM), DNN, Evaluator, batch -
+<code>week7/pricer/</code> — Fine-tuning (PEFT/QLoRA), datasets,
+evaluator - <code>week8/agents/</code> — All agents (base, specialist,
+frontier, ensemble, scanner, messaging, planning, etc.) -
+<code>week8/</code> — Modal apps (hello.py, llama.py,
+pricer_ephemeral.py, pricer_service2.py), deal_agent_framework.py,
+price_is_right.py (Gradio)</p>
+<hr />
+<h2 id="key-libraries-tools">3. Key Libraries &amp; Tools</h2>
+<h3 id="apis-llm-clients">APIs &amp; LLM clients</h3>
+<ul>
+<li><strong>openai</strong> — OpenAI API (chat, embeddings,
+fine-tuning)</li>
+<li><strong>anthropic</strong> — Claude API</li>
+<li><strong>google-generativeai</strong> / <strong>google-genai</strong>
+— Gemini</li>
+<li><strong>litellm</strong> — Unified completion API across OpenAI,
+Anthropic, Groq, etc.;
+<code>completion(messages=..., model="groq/openai/gpt-oss-20b")</code></li>
+<li><strong>ollama</strong> — Local models</li>
+<li><strong>groq</strong> — Fast inference for open models</li>
+</ul>
+<h3 id="langchain-rag-chains">LangChain (RAG, chains)</h3>
+<ul>
+<li><strong>langchain</strong>, <strong>langchain-core</strong>,
+<strong>langchain-text-splitters</strong> — Loaders, splitters, prompts,
+chains</li>
+<li><strong>langchain-openai</strong> — ChatOpenAI,
+OpenAIEmbeddings</li>
+<li><strong>langchain-chroma</strong> — Chroma vector store
+integration</li>
+<li><strong>langchain-huggingface</strong> — HuggingFaceEmbeddings</li>
+<li><strong>langchain-community</strong> — DirectoryLoader, TextLoader,
+etc.</li>
+<li><strong>langchain-experimental</strong> — Experimental features</li>
+</ul>
+<h3 id="embeddings-retrieval">Embeddings &amp; retrieval</h3>
+<ul>
+<li><strong>chromadb</strong> — Vector DB;
+<code>PersistentClient</code>, <code>get_or_create_collection</code>,
+<code>query(query_embeddings=..., n_results=k)</code></li>
+<li><strong>sentence_transformers</strong> — Local embeddings
+(e.g. <code>all-MiniLM-L6-v2</code>) and <strong>CrossEncoder</strong>
+for reranking</li>
+<li><strong>rank_bm25</strong> — BM25Okapi for keyword/lexical
+search</li>
+</ul>
+<h3 id="ml-training">ML / training</h3>
+<ul>
+<li><strong>torch</strong> — PyTorch (DNN, training loops)</li>
+<li><strong>transformers</strong> — AutoTokenizer, AutoModelForCausalLM,
+from_pretrained</li>
+<li><strong>peft</strong> — PeftModel (LoRA/QLoRA adapters)</li>
+<li><strong>bitsandbytes</strong> — 4-bit quantization
+(BitsAndBytesConfig)</li>
+<li><strong>accelerate</strong> — Device map, training utilities</li>
+<li><strong>datasets</strong> — Hugging Face datasets</li>
+<li><strong>scikit-learn</strong> — HashingVectorizer, metrics, TSNE
+(visualization)</li>
+</ul>
+<h3 id="deployment">Deployment</h3>
+<ul>
+<li><strong>modal</strong> — Serverless GPU/CPU; <code>App</code>,
+<code>Image</code>, <code>Volume</code>, <code>Secret</code>,
+<code>@app.function</code>, <code>@app.cls</code>,
+<code>@modal.enter()</code>, <code>@modal.method()</code>,
+<code>modal.Cls.from_name()</code>,
+<code>modal.Function.from_name()</code></li>
+</ul>
+<h3 id="app-ui">App / UI</h3>
+<ul>
+<li><strong>gradio</strong> — Web UI for demos (RAG app, Price Is Right,
+code generator)</li>
+<li><strong>plotly</strong>, <strong>jupyter-dash</strong> —
+Visualizations</li>
+</ul>
+<h3 id="config-env">Config &amp; env</h3>
+<ul>
+<li><strong>python-dotenv</strong> —
+<code>load_dotenv(override=True)</code>, then
+<code>os.getenv("OPENAI_API_KEY")</code> etc.</li>
+<li><strong>.env</strong> — OPENAI_API_KEY, ANTHROPIC_API_KEY, HF_TOKEN,
+GROQ_API_KEY, MODAL_TOKEN_ID/MODAL_TOKEN_SECRET</li>
+</ul>
+<h3 id="other">Other</h3>
+<ul>
+<li><strong>pydantic</strong> — BaseModel, Field (structured outputs,
+deal/opportunity schemas)</li>
+<li><strong>feedparser</strong> — RSS feeds (deals)</li>
+<li><strong>beautifulsoup4</strong>, <strong>requests</strong> —
+Scraping deal pages</li>
+<li><strong>wandb</strong> — Experiment tracking (optional)</li>
+<li><strong>tiktoken</strong> — Token counting (optional)</li>
+</ul>
+<hr />
+<h2 id="models-used">4. Models Used</h2>
+<table>
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 40%" />
+<col style="width: 32%" />
+</colgroup>
+<thead>
+<tr>
+<th>Model</th>
+<th>Use case</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>gpt-4o-mini</strong>, <strong>gpt-4o</strong>,
+<strong>gpt-4.1-nano</strong>, <strong>gpt-5.1</strong>,
+<strong>gpt-5-mini</strong></td>
+<td>Chat, RAG answer, pricer (frontier), scanner (structured output),
+evals</td>
+<td>Weeks 2, 4, 5, 6, 8</td>
+</tr>
+<tr>
+<td><strong>claude-3-5-sonnet</strong>, <strong>claude-haiku</strong>,
+<strong>claude-opus-4-5</strong></td>
+<td>Alternative frontier chat/code gen</td>
+<td>Weeks 2, 4</td>
+</tr>
+<tr>
+<td><strong>gemini-2.0-flash-exp</strong></td>
+<td>Google frontier</td>
+<td>Week 2</td>
+</tr>
+<tr>
+<td><strong>meta-llama/Llama-3.2-3B</strong></td>
+<td>Base for fine-tuning; raw generation (week8 llama.py)</td>
+<td>Weeks 7, 8</td>
+</tr>
+<tr>
+<td><strong>ed-donner/price-2025-11-28_18.47.07</strong> (PEFT)</td>
+<td>Fine-tuned pricer on Modal</td>
+<td>Week 8</td>
+</tr>
+<tr>
+<td><strong>text-embedding-3-large</strong> (OpenAI)</td>
+<td>Optional RAG embeddings</td>
+<td>Week 5</td>
+</tr>
+<tr>
+<td><strong>all-MiniLM-L6-v2</strong>,
+<strong>all-mpnet-base-v2</strong></td>
+<td>HuggingFace embeddings (RAG, FrontierAgent context)</td>
+<td>Weeks 5, 8</td>
+</tr>
+<tr>
+<td><strong>cross-encoder/ms-marco-MiniLM-L-6-v2</strong></td>
+<td>Reranking in RAG</td>
+<td>Week 5</td>
+</tr>
+<tr>
+<td><strong>groq/openai/gpt-oss-20b</strong></td>
+<td>Preprocessor (product title/category/brand); fast, cheap</td>
+<td>Weeks 6, 8</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="core-techniques">5. Core Techniques</h2>
+<ul>
+<li><strong>Structured outputs</strong> — Pydantic models +
+<code>response_format=DealSelection</code> (OpenAI) or
+<code>parse()</code> for reliable JSON.</li>
+<li><strong>Query rewriting</strong> — LLM rewrites user question for
+better retrieval (conversation history + current question).</li>
+<li><strong>Chunking</strong> — RecursiveCharacterTextSplitter
+(e.g. 2000 chars, 200 overlap); Markdown/Python splitters where
+relevant.</li>
+<li><strong>Embeddings</strong> — Encode docs and query; store in
+Chroma; search by similarity.</li>
+<li><strong>Hybrid search</strong> — Combine semantic (vector) + lexical
+(BM25); merge and rank (e.g. weighted score).</li>
+<li><strong>Reranking</strong> — Retrieve more (e.g. 20), then
+cross-encoder or LLM rerank to top-k (e.g. 10).</li>
+<li><strong>RAG prompt</strong> — System message with
+<code>{context}</code> (retrieved chunks) + user question; answer with
+ChatOpenAI/LiteLLM.</li>
+<li><strong>Preprocessing</strong> — Use a small/fast LLM (e.g. Groq) to
+normalize product text (title, category, brand, description) before
+pricing.</li>
+<li><strong>Ensemble</strong> — Combine multiple pricers
+(e.g. specialist 0.1, frontier 0.8, neural network 0.1) with fixed or
+learned weights.</li>
+<li><strong>Quantization</strong> — 4-bit (BitsAndBytesConfig) to run
+LLaMA on a single T4; QLoRA trains low-rank adapters on top.</li>
+<li><strong>Secrets</strong> — Never hardcode API keys; use
+<code>.env</code> locally and Modal Secrets
+(e.g. <code>huggingface-secret</code> with HF_TOKEN) in cloud.</li>
+</ul>
+<hr />
+<h2 id="architecture-the-price-is-right-capstone">6. Architecture: “The
+Price Is Right” Capstone</h2>
+<p>High-level flow:</p>
+<ol type="1">
+<li><strong>Data (week6)</strong>
+<ul>
+<li>Curate product data → <strong>Parser</strong> (Item from JSON/raw) →
+<strong>Preprocessor</strong> (LiteLLM/Groq for title, category, brand,
+description) → <strong>Evaluator</strong> (train/val split,
+metrics).</li>
+</ul></li>
+<li><strong>Baselines (week6)</strong>
+<ul>
+<li><strong>Deep Neural Network</strong>: HashingVectorizer + residual
+MLP; train/eval.<br />
+</li>
+<li><strong>Frontier LLM</strong>: Prompt with product description;
+parse price from completion.</li>
+</ul></li>
+<li><strong>Fine-tuning (weeks 6 &amp; 7)</strong>
+<ul>
+<li><strong>Week 6:</strong> OpenAI fine-tuning (e.g. GPT-4.1-nano) on
+JSONL prompt/completion pairs.<br />
+</li>
+<li><strong>Week 7:</strong> Open-source (LLaMA 3.2-3B) with QLoRA/PEFT;
+train in Colab; push adapter to Hugging Face.</li>
+</ul></li>
+<li><strong>Deployment (week8)</strong>
+<ul>
+<li><strong>Modal</strong>: Ephemeral pricer (load model per call) or
+<strong>class-based</strong> <code>Pricer</code> with
+<code>@modal.enter()</code> (load once), optional
+<strong>Volume</strong> for HF cache, <code>min_containers</code> for
+warm instances.<br />
+</li>
+<li><strong>SpecialistAgent</strong> calls Modal pricer via
+<code>modal.Cls.from_name("pricer-service", "Pricer")</code> and
+<code>pricer.price.remote(description)</code>.</li>
+</ul></li>
+<li><strong>Agents (week8)</strong>
+<ul>
+<li><strong>ScannerAgent</strong>: RSS → fetch deals → OpenAI with
+structured output → DealSelection (5 deals with product_description,
+price, url).<br />
+</li>
+<li><strong>EnsembleAgent</strong>: Preprocessor (LiteLLM) →
+SpecialistAgent (Modal) + FrontierAgent (RAG + GPT) + NeuralNetworkAgent
+(DNN) → weighted average (e.g. 0.8 frontier, 0.1 specialist, 0.1
+DNN).<br />
+</li>
+<li><strong>FrontierAgent</strong>: Embed description with
+SentenceTransformer, query Chroma (products collection) for similar
+products + prices, build context, call GPT for price.<br />
+</li>
+<li><strong>PlanningAgent</strong>: Orchestrates scanner → ensemble
+pricing for each deal → sort by discount → MessagingAgent if discount
+&gt; threshold.<br />
+</li>
+<li><strong>DealAgentFramework</strong>: Chroma products DB,
+PlanningAgent, memory (JSON of opportunities), <code>run()</code> →
+scan, price, notify, persist.</li>
+</ul></li>
+<li><strong>UI</strong>
+<ul>
+<li><strong>price_is_right.py</strong> (Gradio): Deal discovery,
+specialist + RAG flows, optional push notifications.</li>
+</ul></li>
+</ol>
+<hr />
+<h2 id="rag-retrieval-augmented-generation">7. RAG (Retrieval-Augmented
+Generation)</h2>
+<h3 id="ingest-week5">Ingest (week5)</h3>
+<ul>
+<li><strong>Load</strong>: DirectoryLoader + TextLoader
+(e.g. <code>**/*.md</code>), optional encoding.</li>
+<li><strong>Split</strong>:
+RecursiveCharacterTextSplitter(chunk_size=2000, chunk_overlap=200).</li>
+<li><strong>Embed</strong>: HuggingFaceEmbeddings
+(e.g. all-MiniLM-L6-v2) or OpenAIEmbeddings
+(text-embedding-3-large).</li>
+<li><strong>Store</strong>: Chroma.from_documents(chunks, embeddings,
+persist_directory=DB_NAME).</li>
+<li><strong>BM25</strong>: Tokenize chunks (e.g. lower().split()),
+BM25Okapi(tokenized_docs), pickle index + document cache.</li>
+</ul>
+<h3 id="retrieve-answer">Retrieve &amp; answer</h3>
+<ul>
+<li><strong>Query rewrite</strong> (optional): LLM rewrites question
+using conversation history for better retrieval.</li>
+<li><strong>Semantic</strong>:
+vectorstore.as_retriever(search_kwargs={“k”: k}).invoke(query).</li>
+<li><strong>Keyword</strong>: BM25.get_scores(tokenized_query), argsort,
+map back to documents.</li>
+<li><strong>Hybrid</strong>: Combine semantic + BM25 scores (e.g. alpha
+* semantic + (1-alpha) * keyword), dedupe, take top-k.</li>
+<li><strong>Rerank</strong>: CrossEncoder(query, doc) for top
+candidates, sort by score, take final top-k.</li>
+<li><strong>Prompt</strong>: System message with <code>{context}</code>
+= concatenated reranked chunks; append user question;
+ChatOpenAI/LiteLLM.</li>
+</ul>
+<h3 id="evaluation-week5">Evaluation (week5)</h3>
+<ul>
+<li><strong>Retrieval</strong>: MRR (mean reciprocal rank), nDCG
+(normalized DCG), keyword coverage (e.g. % of gold keywords in
+top-k).</li>
+<li><strong>Answer</strong>: LLM-as-judge — accuracy, completeness,
+relevance (e.g. 1–5) + feedback vs reference answer.</li>
+</ul>
+<hr />
+<h2 id="fine-tuning-frontier-vs-open-source">8. Fine-Tuning (Frontier vs
+Open-Source)</h2>
+<h3 id="frontier-openai-week6">Frontier (OpenAI, week6)</h3>
+<ul>
+<li><strong>Data</strong>: JSONL with “messages” (role + content) or
+prompt/completion pairs.</li>
+<li><strong>API</strong>: openai.files.create(),
+openai.fine_tuning.jobs.create().</li>
+<li><strong>Model</strong>: e.g. gpt-4.1-nano.</li>
+<li><strong>Pros</strong>: No GPU management, fast to iterate, good
+quality.<br />
+</li>
+<li><strong>Cons</strong>: Lock-in, cost, less control over data and
+training.</li>
+</ul>
+<h3 id="open-source-week7">Open-source (week7)</h3>
+<ul>
+<li><strong>Base</strong>: meta-llama/Llama-3.2-3B (or similar).</li>
+<li><strong>Method</strong>: QLoRA — 4-bit quantized base + LoRA
+adapters (PEFT); train only adapters.</li>
+<li><strong>Libraries</strong>: transformers, peft, bitsandbytes,
+accelerate, datasets.</li>
+<li><strong>Data</strong>: Prompt format consistent with inference
+(e.g. “What does this cost…is $” → “123”).</li>
+<li><strong>Deployment</strong>: Load base +
+PeftModel.from_pretrained(adapter); same prompt at inference.</li>
+<li><strong>Pros</strong>: Full control, private data, no per-token
+vendor lock-in.<br />
+</li>
+<li><strong>Cons</strong>: Need GPU (Colab/Modal), longer training, you
+own eval and ops.</li>
+</ul>
+<hr />
+<h2 id="deployment-modal">9. Deployment: Modal</h2>
+<ul>
+<li><strong>App</strong>:
+<code>app = modal.App("pricer-service")</code>.</li>
+<li><strong>Image</strong>:
+<code>Image.debian_slim().pip_install("torch", "transformers", "peft", ...)</code>;
+optional <code>.env({"HF_HUB_CACHE": "/cache"})</code>.</li>
+<li><strong>Secrets</strong>:
+<code>modal.Secret.from_name("huggingface-secret")</code> (HF_TOKEN for
+gated models).</li>
+<li><strong>GPU</strong>: <code>gpu="T4"</code>,
+<code>timeout=1800</code>.</li>
+<li><strong>Function</strong>: <code>@app.function(...)</code> for
+stateless; load model inside function (ephemeral) or use a class.</li>
+<li><strong>Class</strong>: <code>@app.cls(...)</code>,
+<code>@modal.enter()</code> for one-time setup (load model),
+<code>@modal.method()</code> for <code>price(description)</code>.</li>
+<li><strong>Volume</strong>:
+<code>Volume.from_name("hf-hub-cache")</code>, mount at
+<code>/cache</code> so model is cached across cold starts.</li>
+<li><strong>Scaling</strong>: <code>min_containers=1</code> keeps one
+warm; <code>0</code> allows scale-to-zero.</li>
+<li><strong>Client</strong>: From another app or notebook:
+<code>Pricer = modal.Cls.from_name("pricer-service", "Pricer")</code>,
+then <code>pricer = Pricer()</code>,
+<code>pricer.price.remote(description)</code>.</li>
+<li><strong>CLI</strong>: <code>uv run modal token set ...</code> or
+<code>uv run modal deploy</code> to deploy.</li>
+</ul>
+<hr />
+<h2 id="multi-agent-system">10. Multi-Agent System</h2>
+<ul>
+<li><strong>Base</strong>: <code>Agent</code> in
+<code>agents/agent.py</code> — name, color, <code>log(message)</code>
+for consistent logging.</li>
+<li><strong>SpecialistAgent</strong>: Calls Modal-deployed fine-tuned
+pricer (remote).</li>
+<li><strong>FrontierAgent</strong>: SentenceTransformer + Chroma
+(similar products) → context → OpenAI/GPT for price.</li>
+<li><strong>NeuralNetworkAgent</strong>: Loads saved DNN weights
+(HashingVectorizer + PyTorch model), inference only.</li>
+<li><strong>EnsembleAgent</strong>: Preprocessor (LiteLLM) → specialist
++ frontier + neural_network → weighted average.</li>
+<li><strong>ScannerAgent</strong>: RSS → ScrapedDeal → OpenAI with
+structured output (DealSelection) → 5 deals with product_description,
+price, url.</li>
+<li><strong>MessagingAgent</strong>: Sends notification (e.g. push) when
+a good opportunity is found.</li>
+<li><strong>PlanningAgent</strong>: Holds scanner, ensemble, messenger;
+<code>plan(memory)</code> → scan, price top deals, sort by discount,
+alert if above threshold, return best Opportunity.</li>
+<li><strong>DealAgentFramework</strong>: Chroma products collection,
+PlanningAgent, memory (list of Opportunity), <code>run()</code> →
+planner.plan(memory), append result, write memory to JSON.</li>
+<li><strong>Data models</strong> (Pydantic): ScrapedDeal, Deal,
+DealSelection, Opportunity (deal, estimate, discount).</li>
+</ul>
+<hr />
+<h2 id="pros-cons-trade-offs">11. Pros, Cons &amp; Trade-offs</h2>
+<table>
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 29%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RAG vs fine-tuning</strong></td>
+<td>RAG: no training, easy to update knowledge, interpretable (chunks).
+Fine-tuning: better at specific format/task, lower latency per
+query.</td>
+<td>RAG: retrieval can miss or over-retrieve; context window limit.
+Fine-tuning: data and training cost; harder to update knowledge.</td>
+</tr>
+<tr>
+<td><strong>Hybrid search</strong></td>
+<td>Better recall for both semantic and keyword queries; handles typos
+and exact terms.</td>
+<td>More moving parts; need to tune alpha and k.</td>
+</tr>
+<tr>
+<td><strong>Reranking</strong></td>
+<td>Improves precision (retrieve more, then rerank to top-k).</td>
+<td>Extra compute (cross-encoder or LLM).</td>
+</tr>
+<tr>
+<td><strong>OpenAI fine-tuning</strong></td>
+<td>No GPU, fast, good UX.</td>
+<td>Cost, vendor lock-in, black box.</td>
+</tr>
+<tr>
+<td><strong>QLoRA</strong></td>
+<td>Train big models on one GPU; small adapter size.</td>
+<td>Slower than full fine-tune; slight quality trade-off.</td>
+</tr>
+<tr>
+<td><strong>Modal</strong></td>
+<td>Serverless GPU, scale-to-zero, good DX.</td>
+<td>Cold starts unless min_containers; vendor.</td>
+</tr>
+<tr>
+<td><strong>Ensemble</strong></td>
+<td>Robust; combines strengths of different models.</td>
+<td>More infra (multiple models/APIs), need to tune weights.</td>
+</tr>
+<tr>
+<td><strong>Chroma</strong></td>
+<td>Simple, local/persistent, good for prototypes.</td>
+<td>Not distributed; scale limits for huge corpora.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="interview-qa">12. Interview Q&amp;A</h2>
+<p><strong>Q: What is RAG and when would you use it vs
+fine-tuning?</strong><br />
+RAG retrieves relevant documents and passes them as context to an LLM so
+it can answer using that knowledge. Use RAG when knowledge changes often
+or you need traceability; use fine-tuning when the task is narrow and
+format-specific (e.g. pricing from description) and you want fewer
+tokens per call.</p>
+<p><strong>Q: How would you improve retrieval quality?</strong><br />
+Use hybrid search (semantic + BM25), query rewriting with conversation
+history, reranking (cross-encoder or LLM), and tune chunk size/overlap.
+Evaluate with MRR, nDCG, and keyword coverage.</p>
+<p><strong>Q: What is QLoRA?</strong><br />
+QLoRA trains low-rank (LoRA) adapters on a 4-bit quantized base model.
+It reduces memory so you can fine-tune a 3B/7B model on a single
+consumer GPU while keeping most of the quality.</p>
+<p><strong>Q: How does the SpecialistAgent get its price?</strong><br />
+It calls a Modal-deployed class:
+<code>Pricer = modal.Cls.from_name("pricer-service", "Pricer")</code>,
+then <code>pricer.price.remote(description)</code>. The Modal app loads
+a 4-bit LLaMA base + PEFT adapter and runs inference on GPU.</p>
+<p><strong>Q: What is the role of the Preprocessor in the pricer
+pipeline?</strong><br />
+The Preprocessor uses a fast LLM (e.g. Groq) to normalize raw product
+text into a structured format (title, category, brand, description).
+This gives the pricing models cleaner, consistent input and better
+accuracy.</p>
+<p><strong>Q: How is the EnsembleAgent weighted?</strong><br />
+In the code it’s fixed: e.g. frontier 0.8, specialist 0.1,
+neural_network 0.1. In practice you could learn weights on a validation
+set or use a meta-model.</p>
+<p><strong>Q: What’s the difference between pricer_ephemeral and
+pricer_service2?</strong><br />
+Ephemeral loads the model inside every function call (simpler, higher
+latency). Service2 uses a class with <code>@modal.enter()</code> to load
+once per container and a Volume to cache the HF model, with optional
+<code>min_containers</code> for warm instances.</p>
+<p><strong>Q: How do you evaluate RAG?</strong><br />
+Retrieval: MRR, nDCG, keyword coverage over test queries. Answer:
+LLM-as-judge scoring accuracy, completeness, relevance against a
+reference, plus free-form feedback.</p>
+<p><strong>Q: Why Chroma and BM25 together?</strong><br />
+Chroma gives semantic similarity; BM25 gives lexical/keyword match.
+Together they cover paraphrases and exact terms (e.g. product codes);
+hybrid score merges the two rankings.</p>
+<p><strong>Q: What is Modal’s Volume for?</strong><br />
+To persist data across container restarts (e.g. Hugging Face model cache
+at <code>/cache</code>). Without it, each cold start re-downloads the
+model.</p>
+<p><strong>Q: What is LiteLLM used for here?</strong><br />
+Unified completion API: one
+<code>completion(messages=..., model="groq/openai/gpt-oss-20b")</code>
+call works across OpenAI, Anthropic, Groq, etc. Used in Preprocessor and
+some RAG/pro implementations.</p>
+<p><strong>Q: Why use a cross-encoder for reranking instead of the same
+bi-encoder used for retrieval?</strong><br />
+Bi-encoder encodes query and doc separately (fast, good for large-scale
+retrieval). Cross-encoder takes (query, doc) together and outputs a
+relevance score — more accurate but too slow to run on every doc; so we
+retrieve with bi-encoder (or hybrid) then rerank top candidates with
+cross-encoder.</p>
+<p><strong>Q: What’s the flow from RSS to “opportunity”?</strong><br />
+ScannerAgent fetches RSS → ScrapedDeal list → filter by memory (already
+seen URLs) → prompt GPT with structured output → DealSelection (5
+deals). For each deal, PlanningAgent runs
+EnsembleAgent.price(description) → estimate; discount = estimate -
+deal.price. Sort by discount; if best &gt; threshold,
+MessagingAgent.alert(best). Opportunity = (deal, estimate,
+discount).</p>
+<p><strong>Q: Where is the products Chroma collection
+populated?</strong><br />
+DealAgentFramework uses it for FrontierAgent’s RAG (similar products +
+prices). Population is typically a separate ingest step (e.g. product
+catalog with descriptions and prices embedded and stored with
+metadata).</p>
+<hr />
+<h2 id="quick-reference-cheat-sheet">13. Quick Reference Cheat
+Sheet</h2>
+<ul>
+<li><strong>RAG pipeline</strong>: Load → Split → Embed → Store (Chroma
++ optional BM25) → Query rewrite → Hybrid retrieve → Rerank → Prompt
+with context → LLM.</li>
+<li><strong>Embeddings</strong>: HuggingFace
+<code>all-MiniLM-L6-v2</code> (free) or OpenAI
+<code>text-embedding-3-large</code> (paid, often better).</li>
+<li><strong>Chunking</strong>: RecursiveCharacterTextSplitter(2000, 200)
+common; adjust by doc type.</li>
+<li><strong>Fine-tuning</strong>: OpenAI = JSONL + API. Open-source =
+base model + QLoRA (PEFT) + prompt-format data.</li>
+<li><strong>Modal</strong>: App, Image, Secret, Volume; <span
+class="citation" data-cites="app.function">@app.function</span> vs <span
+class="citation" data-cites="app.cls">@app.cls</span> + <span
+class="citation" data-cites="modal.enter">@modal.enter</span> + <span
+class="citation" data-cites="modal.method">@modal.method</span>;
+from_name() to call from outside.</li>
+<li><strong>Agents</strong>: Base Agent (logging) → Specialist (Modal),
+Frontier (RAG + GPT), DNN (local weights) → Ensemble (preprocess +
+weighted sum) → Scanner (RSS + structured output) → Planning
+(orchestrate) → DealAgentFramework (Chroma + memory + run).</li>
+<li><strong>Env</strong>: .env + load_dotenv; Modal Secrets for HF_TOKEN
+and other keys in cloud.</li>
+<li><strong>Structured output</strong>: Pydantic model + OpenAI
+<code>response_format=DealSelection</code> or
+<code>.parse()</code>.</li>
+</ul>
+<hr />
+<h3 id="where-to-find-what-file-map">Where to find what (file map)</h3>
+<table>
+<colgroup>
+<col style="width: 42%" />
+<col style="width: 57%" />
+</colgroup>
+<thead>
+<tr>
+<th>What</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAG ingest (load, split, Chroma, BM25)</td>
+<td><code>week5/implementation/ingest.py</code></td>
+</tr>
+<tr>
+<td>RAG answer (rewrite, hybrid, rerank, prompt)</td>
+<td><code>week5/implementation/answer.py</code></td>
+</tr>
+<tr>
+<td>RAG evaluation (MRR, nDCG, LLM judge)</td>
+<td><code>week5/evaluation/eval.py</code></td>
+</tr>
+<tr>
+<td>Product preprocessor (LiteLLM)</td>
+<td><code>week6/pricer/preprocessor.py</code></td>
+</tr>
+<tr>
+<td>DNN pricer (PyTorch)</td>
+<td><code>week6/pricer/deep_neural_network.py</code></td>
+</tr>
+<tr>
+<td>Modal hello / Llama / pricer</td>
+<td><code>week8/hello.py</code>, <code>llama.py</code>,
+<code>pricer_ephemeral.py</code>, <code>pricer_service2.py</code></td>
+</tr>
+<tr>
+<td>All agents</td>
+<td><code>week8/agents/*.py</code> (agent.py base, specialist_agent,
+frontier_agent, ensemble_agent, scanner_agent, planning_agent,
+deals.py)</td>
+</tr>
+<tr>
+<td>Deal framework + Chroma</td>
+<td><code>week8/deal_agent_framework.py</code></td>
+</tr>
+<tr>
+<td>Gradio Price Is Right UI</td>
+<td><code>week8/price_is_right.py</code></td>
+</tr>
+<tr>
+<td>Dependencies</td>
+<td><code>requirements.txt</code>, <code>pyproject.toml</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Use this doc to review before interviews and to quickly recall
+how each week and component fits into the full LLM engineering
+pipeline.</em></p>
+</body>
+</html>
